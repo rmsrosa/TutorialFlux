@@ -13333,7 +13333,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">sin</span><span class="p">(</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
@@ -13349,7 +13349,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -13437,7 +13437,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="o">?</span><span class="nd">@time</span>
@@ -13453,7 +13453,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13515,7 +13515,7 @@ julia&gt; @time begin
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="p">;</span><span class="n">ls</span>
@@ -13538,10 +13538,12 @@ julia&gt; @time begin
 <pre>00.00-Pagina_inicial.ipynb
 01.00-Instalando_acessando_Julia.ipynb
 02.00-Primeiros_passos_Julia.ipynb
-data
+03.00-Flux_neuronios.ipynb
+04.00-Flux_redes_neurais.ipynb
+05.00-Treinando_redes_neurais.ipynb
+06.00-Algoritmos_treinamento.ipynb
 img
 slides
-src
 </pre>
 </div>
 </div>
@@ -13560,7 +13562,7 @@ src
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">readdir</span><span class="p">()</span>
@@ -13576,20 +13578,23 @@ src
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>7-element Vector{String}:
+<pre>10-element Vector{String}:
+ &#34;.ipynb_checkpoints&#34;
  &#34;00.00-Pagina_inicial.ipynb&#34;
  &#34;01.00-Instalando_acessando_Julia.ipynb&#34;
  &#34;02.00-Primeiros_passos_Julia.ipynb&#34;
- &#34;data&#34;
+ &#34;03.00-Flux_neuronios.ipynb&#34;
+ &#34;04.00-Flux_redes_neurais.ipynb&#34;
+ &#34;05.00-Treinando_redes_neurais.ipynb&#34;
+ &#34;06.00-Algoritmos_treinamento.ipynb&#34;
  &#34;img&#34;
- &#34;slides&#34;
- &#34;src&#34;</pre>
+ &#34;slides&#34;</pre>
 </div>
 
 </div>
@@ -13616,7 +13621,7 @@ src
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="O-ambiente-de-pacotes-do-tutorial">O ambiente de pacotes do tutorial<a class="anchor-link" href="#O-ambiente-de-pacotes-do-tutorial">&#182;</a></h3><p>Este repositório contém um ambiente de projeto com todos os pacotes necessários. Na verdade alguns pacotes serão incluídos ao longo do andamento da matéria.</p>
+<h3 id="O-ambiente-de-pacotes-do-tutorial">O ambiente de pacotes do tutorial<a class="anchor-link" href="#O-ambiente-de-pacotes-do-tutorial">&#182;</a></h3><p>Este repositório contém um ambiente de projeto com todos os pacotes necessários. Na verdade, há vários pacotes que foram incluídos mas não serão necessários.</p>
 <p>Para visualizar os pacotes já instalados, basta digitarmos <code>]st</code>, onde <code>]</code> indica o acesso ao modo de gerenciamento de pacotes e <code>st</code> é o comando para verificar o status do ambiente.</p>
 
 </div>
@@ -13624,7 +13629,7 @@ src
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="p">]</span><span class="n">st</span>
@@ -13682,10 +13687,13 @@ src
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="O-IJulia">O IJulia<a class="anchor-link" href="#O-IJulia">&#182;</a></h3><p>Um pacote importante para acessar o Julia a partir do Jupyter é o <a href="https://github.com/JuliaLang/IJulia.jl">IJulia</a>.</p>
-<p>Ao instalar o IJulia pela primeira vez, automaticamente um novo <em>kernel</em> do Julia no Jupyter será criado. Pode-se instalar o IJulia com</p>
+<p>Ao instalar o IJulia pela primeira vez, é necessário criar um novo <em>kernel</em> do Julia pro Jupyter. Pode-se fazer isso com</p>
 
 <pre><code>pkg&gt; activate .
-pkg&gt; add IJulia</code></pre>
+
+pkg&gt; add IJulia
+
+pkg&gt; build IJulia</code></pre>
 <p>O kernel apropriado pode ser escolhido no menu tipo "drop-down" no canto superior direito de cada notebook. Ou na janela de seleção de kernel no momento de criação de um novo notebook.</p>
 
 </div>
@@ -13698,6 +13706,26 @@ pkg&gt; add IJulia</code></pre>
 <p>Caso eles não estejam instalados, eles vão aparecer com uma marcação especial, na lista de pacotes que aparece ao se executar <code>]st</code>.</p>
 <p>Nesse caso, é preciso <em>instantiate</em> o projeto, para que os pacotes indicados sejam instalados, sem a necessidade de adicioná-los um por um. Isso é feito com o comando</p>
 <div class="highlight"><pre><span></span><span class="n">pkg</span><span class="o">&gt;</span> <span class="n">instantiate</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Incluindo-pacotes">Incluindo pacotes<a class="anchor-link" href="#Incluindo-pacotes">&#182;</a></h3><ul>
+<li>Se você quiser instalar os pacotes utilizados aqui sem o arquivo <code>Project.toml</code> que vem com ele, você pode acessar o REPL e prosseguir com</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">pkg</span><span class="o">&gt;</span> <span class="n">activate</span> <span class="o">.</span>
+
+<span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">Flux</span>
+
+<span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">Plots</span>
+
+<span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">Random</span>
+
+<span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">https</span><span class="o">://</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rmsrosa</span><span class="o">/</span><span class="n">ChainPlot</span><span class="o">.</span><span class="n">jl</span>
 </pre></div>
 
 </div>
@@ -13726,7 +13754,7 @@ pkg&gt; add IJulia</code></pre>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Pkg</span>
@@ -13782,7 +13810,7 @@ pkg&gt; add IJulia</code></pre>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">versioninfo</span><span class="p">()</span>
