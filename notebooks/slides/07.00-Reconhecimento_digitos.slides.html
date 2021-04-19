@@ -15140,41 +15140,7 @@ N0f8[0.0N0f8 0.0N0f8 … 0.0N0f8 0.0N0f8; 0.0N0f8 0.0N0f8 … 0.0N0f8 0.0N0f8; �
 </div>
 </div>
 
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="p">[(</span><span class="n">data_x</span><span class="p">,</span> <span class="n">data_y</span><span class="p">)]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1-element Vector{Tuple{Base.ReshapedArray{N0f8, 2, Base.ReinterpretArray{N0f8, 3, UInt8, Array{UInt8, 3}, false}, Tuple{}}, Flux.OneHotArray{UInt32, 10, 1, 2, Vector{UInt32}}}}:
- ([0.0N0f8 0.0N0f8 … 0.0N0f8 0.0N0f8; 0.0N0f8 0.0N0f8 … 0.0N0f8 0.0N0f8; … ; 0.0N0f8 0.0N0f8 … 0.0N0f8 0.0N0f8; 0.0N0f8 0.0N0f8 … 0.0N0f8 0.0N0f8], [0 1 … 0 0; 0 0 … 0 0; … ; 0 0 … 0 0; 0 0 … 0 0])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15437,7 +15403,7 @@ M1987.39 216.178 L2280.54 216.178 L2280.54 95.2176 L1987.39 95.2176  Z
 <h2 id="Treinamento">Treinamento<a class="anchor-link" href="#Treinamento">&#182;</a></h2><ul>
 <li><p>Vamos fazer uma otimização estocástica em lotes.</p>
 </li>
-<li><p>Como temos 60 mil imagens, vamos dividi-las em 6 lotes de 10 mil imagens.</p>
+<li><p>A ideia é dividir os dados em quatro blocos.</p>
 </li>
 <li><p>Vamos usar o <code>DataLoader</code> para facilitar o processo de dividir os dados em lotes.</p>
 </li>
